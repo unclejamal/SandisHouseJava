@@ -25,13 +25,11 @@ public class HouseTest {
         assertEquals(expected, tale.line(2));
     }
 
-
     @Test
     public void testLine3() throws Exception {
         String expected = "This is the rat that ate the malt that lay in the house that Jack built.\n";
         assertEquals(expected, tale.line(3));
     }
-
 
     @Test
     public void testLine4() throws Exception {

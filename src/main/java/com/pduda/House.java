@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class House {
     private static final List<String> DATA = Arrays.asList(
@@ -31,11 +32,15 @@ public class House {
         return String.format("This is %s.\n", phrase(number));
     }
 
-    public String phrase(int number){
-        return data().stream().skip(data().size() - number).collect(Collectors.joining(" "));
+    private String phrase(int number){
+        return parts(number).collect(Collectors.joining(" "));
     }
 
-    public List<String> data() {
+    private Stream<String> parts(int number) {
+        return data().stream().skip(data().size() - number);
+    }
+
+    private List<String> data() {
         return DATA;
     }
 }
